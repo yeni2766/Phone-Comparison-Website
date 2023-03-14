@@ -17,4 +17,8 @@ Overall, this project was much easier compared to my previous project as my know
 
 Given the chance to improve this project, I would focus on enhancing the user experience by adding more filters and sorting options to the comparison page. Additionally, I would add more product categories to make the website more versatile and cater to a wider range of user needs.
 
+# Conclusion
+
+Overall, this project was much easier compared to my previous project as my knowledge of programming languages had improved significantly. I was able to translate my ideas into code successfully and create a functioning product comparison website.
+
 Link to Website: <a href = 'https://1phonecompare.000webhostapp.com/'>Here</a>
