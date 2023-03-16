@@ -1,0 +1,515 @@
+
+	//var canvas = document.getElementById("PhoneChart").getContext('2d');
+		let barchart = new Chart(canvas, {
+		type:'radar',
+		data:{
+			labels:['Design', 'Productivity', 'Camera', 'Display', 'Battery'],
+			datasets:[
+			{
+				label:'Points Score out of 100',
+				backgroundColor:'purple',
+				borderColor: 'black',
+				borderWidth:1,
+				data: [<?=$product['design']?>, <?=$product['performance']?>, <?=$product['camera']?>, <?=$product['display']?>, <?=$product['batteries']?>]
+				
+			}
+		]
+			
+		},
+		
+		options: {
+        maintainAspectRatio: false,
+		responsive:true,
+	
+        }
+	});
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// Check the GET request
+	if(isset($_GET['phone_name']) && $_GET['phone_name'] != '')
+	{
+		// Select query 
+		$sql1 = "select * from phone where phone_name ='".$_GET['phone_name']."'" ;
+		$result1 = $conn1->query($sql1);
+		
+		// Store data in array
+		while($row1 = $result1->fetch_assoc()){
+			$label = ['Design', 'Productivity', 'Camera', 'Display', 'Battery'];
+			$data = [<?php=$product['design']?>, <?php=$product['performance']?>, <?php=$product['camera']?>, <?php=$product['display']?>, <?php=$product['batteries']?>];
+		}
+		
+		// Chart data for ajax request
+		$data = array(
+			'labels' => $label,
+			'datasets' => array(array(
+				'label' => "Price(£)", 
+				'fill' => false, 
+				'backgroundColor' => array('purple'), 
+				'borderColor' => 'black', 
+				'data' => $data,
+			)),
+		);
+		
+		// Convert and echo data in JSON format
+		echo json_encode($data);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#sidebar{
+transition:width 1s;
+
+}
+#sidebar1{
+transition:height 1s;
+
+}
+
+.aa{
+position:relative;
+
+	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+	
+}
+#phonedata {
+position:absolute;
+margin-left:170px;
+margin-top:30px;
+
+}
+
+
+@media (min-width: 1000px) {
+ 
+.buy{
+	position:relative;
+	left:400px;
+	bottom:300px;
+	height:250px;
+	width:500px;
+	
+}
+
+.openmobilemenubutton{
+	display:none;
+}
+
+
+#sidebar1{
+display:none;
+
+}
+
+.h4{
+	position:relative;
+	bottom:50px;
+}
+
+
+}
+
+
+
+#sidebar1{
+visibility:hidden;
+
+}
+
+
+
+
+
+@media (max-width: 767px) {
+	.searchbox #phonedata{
+		position:absolute;
+		right:10px;
+		top:50px;
+		z-index:50px;
+	}	
+		
+	
+	 input[type=text]{
+
+	width:70%;
+	
+	
+	
+}
+.fa fa-camera{
+	position:relative;
+	right:50px;
+}
+
+.container{
+		position:relative;
+	bottom:95px;
+	
+}
+ #openbutton{
+
+display:none;
+}
+ 
+ 
+  .pp {
+    border-bottom: 1px solid black !important;
+	position:relative;
+	
+  }
+  
+  
+#sidebar{
+display:none;
+
+}
+#dashboardcontent{
+margin-left : 0px;
+
+}
+
+#openbutton{
+
+visibility:hidden;
+}
+#openmobilebutton{
+
+visibility:visible;
+}
+
+}
+
+#sidebar .closemenubutton{
+
+	position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+  margin-left: 50px;
+	text-decoration:none;
+	
+}
+#sidebar1 .closemenubutton{
+
+	position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+left:0;
+	text-decoration:none;
+	padding-left:10px;
+	color:black;
+	
+}
+.h4{
+	margin-left:45px;
+	font-weight:bold;
+	margin-top:90px;
+	color:purple;
+	
+	
+}
+.openmenubutton {
+visibility:hidden;
+  font-size: 20px;
+  cursor: pointer;
+background-color:transparent;
+  color: black;
+  padding: 20px 15px;
+  border: none;
+}
+
+.openmobilemenubutton {
+visibility:hidden;
+  font-size: 20px;
+  cursor: pointer;
+background-color:transparent;
+  color: black;
+  padding: 20px 15px;
+  border: none;
+  position:relative;
+  bottom:55px;
+}
+
+#dashboardcontent {
+  transition: margin-left 1s; 
+  padding: 20px;
+}
+  input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+@media screen and (max-height: 760px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+
+}
+
+
+@media screen and (max-width: 412px) {
+ 
+.tabledeal{
+	font-size:0.5rem;
+	width:70%;
+height:10%;
+}
+.border{
+	
+	border-bottom:1px solid black;
+	
+}
+
+}
+
+
+
+
+
+
+
+
+body{
+	
+	overflow-x:hidden;
+}
+
+#phonedata{
+
+	
+}
+		
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+#search{
+	border:none;
+	width:20%;
+		background:transparent;
+	border-bottom:1px solid black;
+  font-family: quicksand;
+  font-size:1rem;
+
+	
+	
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  position:relative;
+  top:130px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family:quicksand;
+  font-weight:bold;
+  color: black;
+  display: block;
+  transition: 0.4s;
+}
+
+.h5{
+	position:relative;
+left:5px;
+bottom:110px;
+	font-family:quicksand;
+	font-weight:bold;
+	font-size:25px;
+	
+	color:#080808;
+	
+	
+}
+
+ input[type=text]{
+	border:none;
+	transition:all 1s ease;
+	width:50%;
+		background:transparent;
+	border-bottom:1px solid black;
+  font-family: quicksand;
+  font-size:1rem;
+
+	
+	
+}
+.brand a{
+	text-decoration:none;
+	color:black;
+	cursor:black;
+}
+input:focus{
+	width:100%;
+	
+	
+}
+html,body
+{
+background-color:#F4F0F0;
+font-family:quicksand;
+}
+a{
+	
+	text-decoration:none;
+}
+
+
+.brandfinder{
+	
+background-color:	purple;
+	
+}
+
+.phonename{
+	
+	margin-left:20px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  position:relative;
+  top:130px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family:quicksand;
+  font-weight:bold;
+  color: black;
+  display: block;
+  transition: 0.4s;
+}
+
+.h5{
+	position:relative;
+right:15px;
+	font-family:quicksand;
+	font-weight:bold;
+	font-size:25px;
+	
+	color:#080808;
+	
+	
+}
+
+ input[type=text]{
+	border:none;
+	transition:all 1s ease;
+	width:50%;
+		background:transparent;
+	border-bottom:1px solid black;
+  font-family: quicksand;
+  font-size:1rem;
+
+	
+	
+}
+.brand a{
+	text-decoration:none;
+	color:black;
+	cursor:black;
+}
+input:focus{
+	width:100%;
+	
+	
+}
+html,body
+{
+background-color:#F4F0F0;
+font-family:quicksand;
+}
+a{
+	
+	text-decoration:none;
+}
+
+#sidebar{
+transition:width 1s;
+
+}
+#sidebar1{
+transition:height 1s;
+
+}
+.brandfinder{
+	
+background-color:	purple;
+	
+}
+
+.phonename{
+	
+	margin-left:20px;
+}
+
+#sidebar1 {
+height:0px;
+width:100%;
+position:relative;
+background-color:#DCDCDC;
+top:0;
+border-right:1px solid #d3d3d3;
+box-shadow: 0px 0px 5px 0px rgb(211,211,211);
+
+}
